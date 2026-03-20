@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salmon Canada — A National Food &amp; Jobs Strategy</title>
+<meta name="description" content="Building industrial-scale land-based salmon aquaculture across Canada. Clean protein. Canadian jobs. Wild salmon abundance.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<meta property="og:title" content="Salmon Canada — A National Food & Jobs Strategy">
+<meta property="og:description" content="Building industrial-scale land-based salmon aquaculture across Canada. Clean protein. Canadian jobs. Wild salmon abundance.">
+<meta property="og:image" content="/og-icon.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep: #0B1D33;
+  --navy: #0F2847;
+  --slate: #1A3A5C;
+  --ocean: #1B6B9A;
+  --teal: #1A8A7D;
+  --salmon: #E86A3A;
+  --salmon-light: #F08A5E;
+  --salmon-pale: #FDEEE7;
+  --warm: #FFF8F4;
+  --sage: #D6DFD0;
+  --ice: #E8F1F8;
+  --white: #FFFFFF;
+  --text: #1C2A3A;
+  --muted: #5A6B7E;
+  --light-text: #8A95A3;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══ HERO ═══ */
+.hero {
+  min-height: 100vh;
+  background: var(--deep);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(27,107,154,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 80%, rgba(26,138,125,0.15) 0%, transparent 50%),
+    linear-gradient(180deg, var(--deep) 0%, #0A1828 100%);
+}
+.hero-img-overlay {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1574781330855-d0db8cc6a79c?w=1920&q=80') center/cover;
+  opacity: 0.12;
+  mix-blend-mode: luminosity;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 1200px; margin: 0 auto;
+  padding: 120px 40px 80px;
+}
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.08;
+  max-width: 800px;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--salmon);
+}
+.hero-sub {
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  max-width: 620px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+.hero-pills {
+  display: flex; flex-wrap: wrap; gap: 12px;
+}
+.pill {
+  padding: 10px 22px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+}
+.pill.accent {
+  background: var(--salmon);
+  border-color: var(--salmon);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.hero-scroll {
+  position: absolute; bottom: 32px; left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.4);
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  text-decoration: none;
+}
+.hero-scroll::after {
+  content: '↓'; font-size: 20px;
+  animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* ═══ NAV ═══ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 20px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: all 0.3s;
+}
+.nav.scrolled {
+  background: rgba(11,29,51,0.95);
+  backdrop-filter: blur(12px);
+  padding: 14px 40px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+.nav-brand {
+  font-family: 'Fraunces', serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+}
+.nav-brand span { color: var(--salmon); }
+.nav-cta {
+  padding: 10px 24px;
+  border-radius: 100px;
+  background: var(--salmon);
+  color: var(--white);
+  font-size: 14px; font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.nav-cta:hover { transform: scale(1.03); }
+
+/* ═══ SECTION SHARED ═══ */
+section { padding: 100px 40px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.sec-tag {
+  font-size: 12px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--salmon);
+  margin-bottom: 16px;
+}
+.sec-heading {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700; line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+.sec-heading.light { color: var(--white); }
+
+/* ═══ VISION ═══ */
+.vision { background: var(--warm); }
+.vision-intro {
+  font-size: 20px; font-weight: 300; color: var(--muted);
+  max-width: 720px; margin-bottom: 60px; line-height: 1.7;
+}
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.vision-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 36px 32px;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.vision-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+.vision-icon {
+  width: 56px; height: 56px;
+  margin-bottom: 20px;
+}
+.vision-icon svg {
+  width: 56px; height: 56px;
+}
+.vision-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px; font-weight: 700;
+  margin-bottom: 10px; color: var(--text);
+}
+.vision-card p {
+  font-size: 15px; color: var(--muted); line-height: 1.65;
+}
+
+/* ═══ OPPORTUNITY ═══ */
+.opportunity {
+  background: var(--deep);
+  color: var(--white);
+  position: relative; overflow: hidden;
+}
+.opportunity::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 20%, rgba(232,106,58,0.08) 0%, transparent 50%);
+}
+.opp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative; z-index: 2;
+}
+.opp-stats { display: flex; flex-direction: column; gap: 32px; }
+.opp-stat { display: flex; gap: 20px; align-items: flex-start; }
+.opp-num {
+  font-family: 'Fraunces', serif;
+  font-size: 44px; font-weight: 800;
+  color: var(--salmon);
+  line-height: 1;
+  min-width: 140px;
+}
+.opp-num .unit {
+  font-size: 16px; font-weight: 400;
+  color: var(--salmon-light);
+  display: block;
+}
+.opp-desc h4 {
+  font-size: 17px; font-weight: 600; color: var(--white);
+  margin-bottom: 4px;
+}
+.opp-desc p {
+  font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6;
+}
+.opp-text p {
+  font-size: 18px; color: rgba(255,255,255,0.7); line-height: 1.7;
+  margin-bottom: 20px;
+}
+.opp-text p strong { color: var(--white); font-weight: 600; }
+
+/* ═══ PILLARS ═══ */
+.pillars { background: var(--white); }
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.pillar-card {
+  border-radius: 16px;
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.pillar-card.p1 { background: linear-gradient(135deg, var(--navy), var(--slate)); color: var(--white); }
+.pillar-card.p2 { background: linear-gradient(135deg, #1A5C4A, var(--teal)); color: var(--white); }
+.pillar-card.p3 { background: linear-gradient(135deg, #7A3B1E, var(--salmon)); color: var(--white); }
+.pillar-num {
+  font-family: 'Fraunces', serif;
+  font-size: 64px; font-weight: 800;
+  opacity: 0.12; position: absolute;
+  top: -8px; right: 16px; line-height: 1;
+}
+.pillar-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px; font-weight: 700;
+  margin-bottom: 16px;
+}
+.pillar-card ul {
+  list-style: none; display: flex; flex-direction: column; gap: 10px;
+}
+.pillar-card li {
+  font-size: 14px; line-height: 1.5;
+  padding-left: 18px; position: relative;
+  opacity: 0.9;
+}
+.pillar-card li::before {
+  content: '→'; position: absolute; left: 0;
+  font-weight: 700; opacity: 0.6;
+}
+
+/* ═══ CTA / FORM ═══ */
+.cta-section {
+  background: linear-gradient(135deg, var(--deep) 0%, var(--navy) 100%);
+  color: var(--white);
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(232,106,58,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 50%, rgba(26,138,125,0.1) 0%, transparent 50%);
+}
+.cta-section > .container { position: relative; z-index: 2; }
+.cta-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.cta-left .sec-heading { max-width: 500px; }
+.cta-sub {
+  font-size: 18px; color: rgba(255,255,255,0.65);
+  max-width: 460px;
+  line-height: 1.7;
+}
+.cta-form {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 36px 32px;
+  backdrop-filter: blur(8px);
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  transition: border-color 0.2s, background 0.2s;
+  outline: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--salmon);
+  background: rgba(255,255,255,0.1);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.form-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+.form-toggle input[type="checkbox"] {
+  width: 18px; height: 18px;
+  accent-color: var(--salmon);
+  cursor: pointer;
+}
+.form-toggle span {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+}
+.form-submit {
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 100px;
+  background: var(--salmon);
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.form-submit:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 24px rgba(232,106,58,0.35);
+}
+
+/* ═══ FOOTER ═══ */
+.footer {
+  background: var(--deep);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 40px;
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 13px;
+}
+.footer-brand {
+  font-family: 'Fraunces', serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.footer-brand span { color: var(--salmon); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 900px) {
+  .opp-grid, .cta-layout { grid-template-columns: 1fr; }
+  .pillar-grid { grid-template-columns: 1fr; }
+  section { padding: 72px 24px; }
+  .nav { padding: 16px 24px; }
+  .hero-content { padding: 100px 24px 60px; }
+}
+@media (max-width: 600px) {
+  .vision-grid { grid-template-columns: 1fr; }
+  .hero-pills { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-brand">Salmon <span>Canada</span></a>
+  <a href="#join" class="nav-cta">Join the Movement</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-img-overlay"></div>
+  <div class="hero-content">
+    <h1>Clean protein.<br>Canadian jobs.<br><em>Wild salmon abundance.</em></h1>
+    <p class="hero-sub">
+      Salmon Canada is a national food and jobs strategy to build industrial-scale, land-based salmon aquaculture across Canada — creating thousands of skilled jobs, strengthening food sovereignty, and rebuilding wild salmon abundance.
+    </p>
+    <div class="hero-pills">
+      <div class="pill accent">Land-Based Aquaculture</div>
+      <div class="pill">Food Sovereignty</div>
+      <div class="pill">Indigenous Economic Reconciliation</div>
+      <div class="pill">Clean Technology</div>
+    </div>
+  </div>
+  <a href="#vision" class="hero-scroll">Discover</a>
+</section>
+
+<!-- VISION -->
+<section class="vision" id="vision">
+  <div class="container">
+    <div class="sec-tag">The Opportunity</div>
+    <h2 class="sec-heading">Canada has a once-in-a-generation<br>window to lead.</h2>
+    <p class="vision-intro">
+      We can rebuild wild salmon abundance in British Columbia and across Canada. And we can do it while building a modern, world-class salmon production industry, on land, from coast to coast.
+    </p>
+    <div class="vision-grid">
+
+      <!-- CARD 1: Build on Land -->
+      <div class="vision-card">
+        <div class="vision-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="22" width="48" height="28" rx="4" stroke="#1B6B9A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#E8F1F8"/>
+            <path d="M14 22V14a14 14 0 0 1 28 0v8" stroke="#1B6B9A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="20" y1="34" x2="20" y2="42" stroke="#1B6B9A" stroke-width="2" stroke-linecap="round"/>
+            <line x1="28" y1="30" x2="28" y2="42" stroke="#1B6B9A" stroke-width="2" stroke-linecap="round"/>
+            <line x1="36" y1="32" x2="36" y2="42" stroke="#1B6B9A" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="28" cy="12" r="3" stroke="#1B6B9A" stroke-width="1.5" fill="none"/>
+            <path d="M8 50h40" stroke="#1B6B9A" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 4"/>
+          </svg>
+        </div>
+        <h3>Build on Land</h3>
+        <p>Industrial-scale, closed-containment recirculating aquaculture systems (RAS) powered by clean Canadian energy. Predictable supply. Zero interaction with wild stocks. Export-ready from day one.</p>
+      </div>
+
+      <!-- CARD 2: Rebuild Wild Salmon -->
+      <div class="vision-card">
+        <div class="vision-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 38c4-6 10-10 18-10s14 4 18 10" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M10 44c3-4 8-7 14-7s11 3 14 7" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M28 8c-3 4-5 8-5 14" stroke="#2E7D32" stroke-width="2" stroke-linecap="round"/>
+            <path d="M28 8c3 4 5 8 5 14" stroke="#2E7D32" stroke-width="2" stroke-linecap="round"/>
+            <path d="M28 8c0-2 2-4 5-5" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M28 8c0-2-2-4-5-5" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/>
+            <ellipse cx="20" cy="34" rx="2.5" ry="4" stroke="#2E7D32" stroke-width="1.5" fill="#E8F5E9"/>
+            <ellipse cx="36" cy="34" rx="2.5" ry="4" stroke="#2E7D32" stroke-width="1.5" fill="#E8F5E9"/>
+            <path d="M44 38c2 3 4 7 4 12" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3"/>
+            <path d="M12 38c-2 3-4 7-4 12" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3"/>
+            <circle cx="28" cy="48" r="3" stroke="#2E7D32" stroke-width="1.5" fill="#E8F5E9"/>
+          </svg>
+        </div>
+        <h3>Rebuild Wild Salmon</h3>
+        <p>Remove open-net pen pressure from wild salmon migration corridors. Invest in priority watershed restoration, science-based monitoring, and transparent open data to rebuild abundance of all marine life for generations.</p>
+      </div>
+
+      <!-- CARD 3: Indigenous Economic Reconciliation -->
+      <div class="vision-card">
+        <div class="vision-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer circle medallion -->
+            <circle cx="28" cy="28" r="25" stroke="#E86A3A" stroke-width="2.5" fill="#FDEEE7"/>
+            <!-- Inner decorative ring -->
+            <circle cx="28" cy="28" r="21" stroke="#E86A3A" stroke-width="1" fill="none" opacity="0.3"/>
+            <!-- Stylized salmon in PNW formline style - body -->
+            <path d="M12 28c2-5 6-9 11-10c3-0.5 5 0.5 7 3c2-2.5 4-3.5 7-3c5 1 9 5 11 10c-2 5-6 9-11 10c-3 0.5-5-0.5-7-3c-2 2.5-4 3.5-7 3c-5-1-9-5-11-10Z" stroke="#E86A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <!-- Salmon eye - left -->
+            <circle cx="20" cy="26" r="2.5" stroke="#E86A3A" stroke-width="1.5" fill="#E86A3A" opacity="0.2"/>
+            <circle cx="20" cy="26" r="1" fill="#E86A3A"/>
+            <!-- Salmon eye - right -->
+            <circle cx="36" cy="26" r="2.5" stroke="#E86A3A" stroke-width="1.5" fill="#E86A3A" opacity="0.2"/>
+            <circle cx="36" cy="26" r="1" fill="#E86A3A"/>
+            <!-- Central ovoid - connecting element -->
+            <ellipse cx="28" cy="28" rx="3.5" ry="5" stroke="#E86A3A" stroke-width="1.5" fill="none"/>
+            <!-- Tail fins - formline U-shapes -->
+            <path d="M10 24c-2 2-2 6 0 8" stroke="#E86A3A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M46 24c2 2 2 6 0 8" stroke="#E86A3A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- Top fin element -->
+            <path d="M24 17c2-2 6-2 8 0" stroke="#E86A3A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- Bottom fin element -->
+            <path d="M24 39c2 2 6 2 8 0" stroke="#E86A3A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- Small decorative dots - PNW style -->
+            <circle cx="28" cy="20" r="1" fill="#E86A3A" opacity="0.5"/>
+            <circle cx="28" cy="36" r="1" fill="#E86A3A" opacity="0.5"/>
+            <circle cx="15" cy="28" r="0.8" fill="#E86A3A" opacity="0.4"/>
+            <circle cx="41" cy="28" r="0.8" fill="#E86A3A" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3>Indigenous Economic Reconciliation</h3>
+        <p>First Nations equity partnerships and community benefit agreements at the heart of every project. Year-round employment, skilled trades pathways, and ownership opportunities in coastal and rural communities.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section class="opportunity">
+  <div class="container">
+    <div class="opp-grid">
+      <div>
+        <div class="sec-tag">By the Numbers</div>
+        <h2 class="sec-heading light">The scale of the<br>opportunity.</h2>
+        <div class="opp-text">
+          <p>Canada has the <strong>clean energy, engineering talent, cold water, and trusted food brand</strong> to compete with Norway, Scotland, and Chile — and win.</p>
+          <p>Land-based salmon production isn't nascent technology. It's <strong>fourth-generation infrastructure</strong>, proven at commercial scale, and ready for Canadian deployment.</p>
+        </div>
+      </div>
+      <div class="opp-stats">
+        <div class="opp-stat">
+          <div class="opp-num">1.2M<span class="unit">metric tonnes/year</span></div>
+          <div class="opp-desc">
+            <h4>National Production Potential</h4>
+            <p>BC, Ontario, and other provinces positioned for industrial-scale land-based salmon production.</p>
+          </div>
+        </div>
+        <div class="opp-stat">
+          <div class="opp-num">100K+<span class="unit">jobs</span></div>
+          <div class="opp-desc">
+            <h4>Direct &amp; Indirect Employment</h4>
+            <p>Biologists, engineers, data scientists, trades, processing, and distribution across Canada.</p>
+          </div>
+        </div>
+        <div class="opp-stat">
+          <div class="opp-num">500+<span class="unit">per facility</span></div>
+          <div class="opp-desc">
+            <h4>Permanent Skilled Jobs</h4>
+            <p>Each 60,000 metric tonne facility creates 500–600 direct jobs plus significant indirect employment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="container">
+    <div class="sec-tag">The Strategy</div>
+    <h2 class="sec-heading">Three pillars. One measurable<br>outcomes framework.</h2>
+    <div class="pillar-grid">
+      <div class="pillar-card p1">
+        <div class="pillar-num">01</div>
+        <h3>National Land-Based<br>Salmon Production</h3>
+        <ul>
+          <li>Industrial-scale closed-containment facilities</li>
+          <li>Clean energy integration and efficiency</li>
+          <li>Predictable domestic supply and food security</li>
+          <li>Export-ready value-added processing</li>
+          <li>Canadian branding and premium market positioning</li>
+        </ul>
+      </div>
+      <div class="pillar-card p2">
+        <div class="pillar-num">02</div>
+        <h3>Coastal Transition &amp;<br>Year-Round Jobs</h3>
+        <ul>
+          <li>Worker retraining, credentialing, and paid pathways</li>
+          <li>Community benefit agreements</li>
+          <li>Fisheries modernization and selective gear</li>
+          <li>Regenerative seaweed and shellfish supply chains</li>
+          <li>Remediation of legacy farm sites</li>
+        </ul>
+      </div>
+      <div class="pillar-card p3">
+        <div class="pillar-num">03</div>
+        <h3>Wild Salmon<br>Abundance</h3>
+        <ul>
+          <li>Priority watershed restoration and resilience</li>
+          <li>Science-based rebuilding targets</li>
+          <li>Indigenous stewardship and co-management</li>
+          <li>Transparent monitoring and open data</li>
+          <li>Growing the wild salmon economy: recreational, commercial, tourism</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN THE MOVEMENT -->
+<section class="cta-section" id="join">
+  <div class="container">
+    <div class="cta-layout">
+      <div class="cta-left">
+        <div class="sec-tag">Join the Movement</div>
+        <h2 class="sec-heading light">We're building something<br>worth building.</h2>
+        <p class="cta-sub">
+          Salmon Canada is bringing together investors, Indigenous communities, governments, and industry leaders to create the infrastructure for Canada's next great food industry.
+        </p>
+      </div>
+      <div class="cta-form">
+        <form action="#" method="POST" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us how you'd like to be involved..."></textarea>
+          </div>
+          <label class="form-toggle">
+            <input type="checkbox" checked>
+            <span>Sign up to receive updates from Salmon Canada</span>
+          </label>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">Salmon <span>Canada</span></div>
+  <p>A national food and jobs strategy for land-based salmon aquaculture.</p>
+  <p style="margin-top:8px;">© 2026 Salmon Canada. All rights reserved.</p>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Form handler — POST to serverless function
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+  const origText = btn.textContent;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value,
+    subscribe: form.querySelector('input[type="checkbox"]').checked
+  };
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      btn.textContent = 'Thank you! We\'ll be in touch.';
+      btn.style.background = '#1A8A7D';
+      form.reset();
+      form.querySelector('input[type="checkbox"]').checked = true;
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    btn.textContent = origText;
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or email info@salmoncanada.ca directly.');
+  }
+}
+</script>
+</body>
+</html>
