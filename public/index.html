@@ -103,12 +103,25 @@ body {
   color: rgba(255,255,255,0.85);
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(8px);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.pill:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.4);
+  color: var(--white);
+  transform: translateY(-2px);
 }
 .pill.accent {
   background: var(--salmon);
   border-color: var(--salmon);
   color: var(--white);
   font-weight: 600;
+}
+.pill.accent:hover {
+  background: var(--salmon-light);
+  border-color: var(--salmon-light);
 }
 
 .hero-scroll {
@@ -453,10 +466,10 @@ section { padding: 100px 40px; }
       Salmon Canada is a national food and jobs strategy to build industrial-scale, land-based salmon aquaculture across Canada — creating thousands of skilled jobs, strengthening food sovereignty, and rebuilding wild salmon abundance.
     </p>
     <div class="hero-pills">
-      <div class="pill accent">Land-Based Aquaculture</div>
-      <div class="pill">Food Sovereignty</div>
-      <div class="pill">Indigenous Economic Reconciliation</div>
-      <div class="pill">Clean Technology</div>
+      <a href="#vision" class="pill accent">Land-Based Aquaculture</a>
+      <a href="#opportunity" class="pill">Food Sovereignty</a>
+      <a href="#pillars" class="pill">Indigenous Economic Reconciliation</a>
+      <a href="#pillars" class="pill">Clean Technology</a>
     </div>
   </div>
   <a href="#vision" class="hero-scroll">Discover</a>
@@ -551,7 +564,7 @@ section { padding: 100px 40px; }
 </section>
 
 <!-- OPPORTUNITY -->
-<section class="opportunity">
+<section class="opportunity" id="opportunity">
   <div class="container">
     <div class="opp-grid">
       <div>
@@ -590,7 +603,7 @@ section { padding: 100px 40px; }
 </section>
 
 <!-- PILLARS -->
-<section class="pillars">
+<section class="pillars" id="pillars">
   <div class="container">
     <div class="sec-tag">The Strategy</div>
     <h2 class="sec-heading">Three pillars. One measurable<br>outcomes framework.</h2>
